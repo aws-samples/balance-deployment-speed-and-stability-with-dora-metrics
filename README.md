@@ -89,13 +89,13 @@ Before you start deploying or working with this codebase, there are a few config
 `constants.py`
 This file stores various constants that are utilized throughout the project. Here's a brief overview:
 
-`TOOLING_ACCOUNT_ID` & `TOOLING_ACCOUNT_REGION`: These represent the AWS Account ID and region for CodeCommit and CodePipeline where your infrastructure-as-code resides.\
+`TOOLING_ACCOUNT_ID` & `TOOLING_ACCOUNT_REGION`: These represent the AWS Account ID and region for CodePipeline where your infrastructure-as-code resides.\
 
 `OPS_ACCOUNT_ID & OPS_ACCOUNT_REGION`: These are for your centralized Ops AWS Account ID and its region.
 
 `TOOLING_CROSS_ACCOUNT_LAMBDA_ROLE`: The IAM Role that allows for cross-account Lambda function execution.
 
-`DEFAULT_MAIN_BRANCH`: This is the default branch in your CodeCommit that's used to deploy to Production. It is set to master by default.
+`DEFAULT_MAIN_BRANCH`: This is the default branch in your Code repository that's used to deploy to Production. It is set to master by default.
 
 #### Important:
 Before running any code, make sure you fill in the necessary values in the constants.py file.
@@ -107,7 +107,7 @@ The code will not work correctly without these values.
 This project is set up like a standard Python project.  The initialization process also creates
 a virtualenv within this project, stored under the .venv directory.
 
-###Prerequisites
+### Prerequisites
 
 Ensure you have `python3` with the `venv` package accessible in your path.
 
