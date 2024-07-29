@@ -21,7 +21,7 @@ Our metric calculation process runs in three steps:
 # Provisioned resources
 
 The following figure shows the resources you’ll launch with each CloudFormation stack. This includes six AWS CloudFormation stacks in operations account. The first stack sets up log integration for GitHub commit activity. Four stacks contain a Lambda function which creates one of the DORA metrics. The sixth stack creates the consolidated dashboard in Amazon CloudWatch. The EventBridge stack in the tooling account includes Amazon EventBridge rules with a target of the central event bus in operations account, plus AWS IAM role with cross-account access to put events in the operations account.
-![Figure 3. Resources provisioned with this solution.png](images%2FFigure%203.%20Resources%20provisioned%20with%20this%20solution.png)
+![Resources provisioned with this solution.png](images%2FFigure%203.%20Resources%20provisioned%20with%20this%20solution.png)
 
 ## Metric calculation process
 
@@ -31,7 +31,8 @@ We calculate the DORA metrics in our solution as follows:
 3.	Change failure rate equals the count of changes in production which led to service failure, logged as OpsItem, divided by all deployments with status Succeeded in production (per day/week/month). 
 4.	Mean time to recovery equals the average duration from when an incident was logged in AWS OpsCenter as OpsItem to when the AWS CodePipeline has successfully launched with branch name referencing the OpsItem ID.
 The following figure provides a simple visualization of the calculation logic. The deployment times of two features fall into the DORA reporting period so deployment frequency is two (deployments). Lead time for change calculates the average duration from first commit to deployment in production. One change led to service interruption so change failure rate is one out of two, or 50%. The mean time to recovery calculates the duration from service interruption until the updated change is re-deployed. The reporting period for all metrics is daily, weekly, and monthly.
-![Calculating the DORA metrics along the development lifecycle](image.png)
+![Calculating the DORA metrics along the development lifecycle](<img width="468" alt="image" src="https://github.com/user-attachments/assets/feca68f4-96fd-4eb0-8e2d-82c6882ad960">)
+
 
 ## Project Structure
 ```
