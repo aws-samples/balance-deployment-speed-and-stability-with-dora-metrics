@@ -26,12 +26,12 @@ The following figure shows the resources you’ll launch with each CloudFormatio
 ## Metric calculation process
 
 We calculate the DORA metrics in our solution as follows: 
-1.	Deployment frequency equals the count of deployments with status Succeeded from AWS CodePipeline (per day/week/month). 
-2.	Lead time for changes equals the average duration from first commit for the change until the time of deployment to production i.e., with status Succeeded from AWS CodePipeline (per day/week/month).
-3.	Change failure rate equals the count of changes in production which led to service failure, logged as OpsItem, divided by all deployments with status Succeeded in production (per day/week/month). 
-4.	Mean time to recovery equals the average duration from when an incident was logged in AWS OpsCenter as OpsItem to when the AWS CodePipeline has successfully launched with branch name referencing the OpsItem ID.
-The following figure provides a simple visualization of the calculation logic. The deployment times of two features fall into the DORA reporting period so deployment frequency is two (deployments). Lead time for change calculates the average duration from first commit to deployment in production. One change led to service interruption so change failure rate is one out of two, or 50%. The mean time to recovery calculates the duration from service interruption until the updated change is re-deployed. The reporting period for all metrics is daily, weekly, and monthly.
-![Calculating the DORA metrics along the development lifecycle](<img width="468" alt="image" src="https://github.com/user-attachments/assets/feca68f4-96fd-4eb0-8e2d-82c6882ad960">)
+1.	_Deployment Frequency_ equals the count of deployments with status Succeeded from AWS CodePipeline (per day/week/month). 
+2.	_Lead Time For Changes_ equals the average duration from first commit for the change until the time of deployment to production i.e., with status Succeeded from AWS CodePipeline (per day/week/month).
+3.	_Change Failure Rate_ equals the count of changes in production which led to service failure, logged as OpsItem, divided by all deployments with status Succeeded in production (per day/week/month). 
+4.	_Mean Time To Recovery_ equals the average duration from when an incident was logged in AWS OpsCenter as OpsItem to when the AWS CodePipeline has successfully launched with branch name referencing the OpsItem ID.
+The following figure provides a simple visualization of the calculation logic. The deployment times of two features fall into the DORA reporting period so _Deployment Frequency_ is two (deployments). _Lead Time For Change_ calculates the average duration from first commit to deployment in production. One change led to service interruption so change failure rate is one out of two, or 50%. The _Mean Time To Recovery_ calculates the duration from service interruption until the updated change is re-deployed. The reporting period for all metrics is daily, weekly, and monthly.
+<img width="808" alt="Figure 2  The DORA metrics along the development lifecycle" src="https://github.com/user-attachments/assets/d24b7c82-2d94-49e5-bf56-8f86f9d03528">
 
 
 ## Project Structure
