@@ -7,4 +7,4 @@ python-dateutil
 aws_lambda_powertools
 pytest==9.0.3
 moto
-requests==2.32.2
+requests==2.33.0
